@@ -18,35 +18,57 @@ import { CommonModule, NgFor } from '@angular/common';
       Learn more about Angular
     </a>
 
-    <div class="container">
-      <h2>Hospital Visitor Entry</h2>
-      <form [formGroup]="visitorForm" (ngSubmit)="submitForm()">
-        <label>Name:</label>
-        <input formControlName="name" required>
-        
-        <label>Contact:</label>
-        <input formControlName="contact" required>
-        
-        <label>Purpose of Visit:</label>
-        <input formControlName="purpose" required>
-        
-        <label>Date:</label>
-        <input type="date" formControlName="date" required>
-        
-        <button type="submit" [disabled]="!visitorForm.valid">Submit</button>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Hospital Visitor Entry</h2>
+    
+      <form [formGroup]="visitorForm" (ngSubmit)="submitForm()" class="p-4 border rounded shadow bg-light">
+        <div class="mb-3">
+          <label class="form-label">Name:</label>
+          <input type="text" class="form-control" formControlName="name" required>
+        </div>
+    
+        <div class="mb-3">
+          <label class="form-label">Contact:</label>
+          <input type="text" class="form-control" formControlName="contact" required>
+        </div>
+    
+        <div class="mb-3">
+          <label class="form-label">Purpose of Visit:</label>
+          <input type="text" class="form-control" formControlName="purpose" required>
+        </div>
+    
+        <div class="mb-3">
+          <label class="form-label">Date:</label>
+          <input type="date" class="form-control" formControlName="date" required>
+        </div>
+    
+        <button type="submit" class="btn btn-primary w-100" [disabled]="!visitorForm.valid">Submit</button>
       </form>
-      
-      <h3>Visitor Log</h3>
-      <table>
-        <tr><th>Name</th><th>Contact</th><th>Purpose</th><th>Date</th></tr>
-        <tr *ngFor="let visitor of visitors">
-          <td>{{ visitor.name }}</td>
-          <td>{{ visitor.contact }}</td>
-          <td>{{ visitor.purpose }}</td>
-          <td>{{ visitor.date }}</td>
-        </tr>
-      </table>
+    
+      <h3 class="text-center mt-5">Visitor Log</h3>
+    
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered mt-3">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Purpose</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let visitor of visitors">
+              <td>{{ visitor.name }}</td>
+              <td>{{ visitor.contact }}</td>
+              <td>{{ visitor.purpose }}</td>
+              <td>{{ visitor.date }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    
   `,
 })
 export class App {
