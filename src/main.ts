@@ -22,7 +22,7 @@ import { CommonModule, NgFor } from '@angular/common';
       <h2 class="text-center mb-4">Hospital Visitor Entry</h2>
     
       <form [formGroup]="visitorForm" (ngSubmit)="submitForm()" class="p-4 border rounded shadow bg-light">
-        <div class="mb-3">
+        <div class="mb-3"> 
           <label class="form-label">Name:</label>
           <input type="text" class="form-control" formControlName="name" required>
         </div>
