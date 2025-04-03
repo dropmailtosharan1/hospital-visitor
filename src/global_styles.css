@@ -1,0 +1,13 @@
+/* Add application styles & imports to this file! */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+input, button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
